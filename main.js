@@ -37,10 +37,11 @@ function createWindow () {
 
   mainWindow.on('show', function () {
     console.log(mainWindow.dom);
+    mainWindow.webContents.send('some', 5);
   })
 
   mainWindow.once('ready-to-show', function () {
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
     mainWindow.show();
     console.log(mainWindow.dom);
 //    helloWorld = fluidTutorial.helloWorld(".helloWorld", {});
